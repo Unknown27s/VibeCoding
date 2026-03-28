@@ -48,7 +48,7 @@ export default function ClubDetailPage() {
   const clubEvents = events.filter((e) => e.clubId === club.id);
 
   return (
-    <div className="pt-24 pb-12">
+    <div className="pt-32 pb-12">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Back Link */}
         <Link

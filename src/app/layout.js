@@ -2,6 +2,7 @@ import "./globals.css";
 import { VibeProvider } from "@/context/VibeContext";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import AIChatBot from "@/components/AIChatBot";
 
 export const metadata = {
   title: "AstroClub — Smart Digital Ecosystem for Club Management",
@@ -17,6 +18,7 @@ export default function RootLayout({ children }) {
           <Navbar />
           <main className="min-h-screen">{children}</main>
           <Footer />
+          <AIChatBot />
         </VibeProvider>
       </body>
     </html>

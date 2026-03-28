@@ -93,10 +93,11 @@ body {
 }
 
 .glass-nav {
-  background: rgba(10, 10, 26, 0.8);
+  background: rgba(10, 10, 26, 0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border-color);
+  z-index: 100;
 }
 
 .glass-input {

@@ -31,7 +31,7 @@ export default function AdminPage() {
   ];
 
   return (
-    <div className="pt-24 pb-12">
+    <div className="pt-32 pb-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-8">

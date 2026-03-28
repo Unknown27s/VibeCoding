@@ -17,8 +17,13 @@ export default function NotificationDropdown({ onClose }) {
       animate={{ opacity: 1, y: 0, scale: 1 }}
       exit={{ opacity: 0, y: 10, scale: 0.95 }}
       transition={{ duration: 0.2 }}
-      className="absolute top-12 right-0 w-80 sm:w-96 z-50 glass-card overflow-hidden"
-      style={{ border: "1px solid var(--border-color)" }}
+      className="absolute top-12 right-0 w-80 sm:w-96 overflow-hidden rounded-2xl"
+      style={{
+        border: "1px solid var(--border-color)",
+        background: "var(--bg-secondary)",
+        boxShadow: "0 20px 60px rgba(0,0,0,0.5)",
+        zIndex: 9999,
+      }}
     >
       {/* Header */}
       <div className="flex items-center justify-between px-4 py-3 border-b" style={{ borderColor: "var(--border-color)" }}>
