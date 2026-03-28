@@ -1,6 +1,7 @@
 "use client";
+import Link from "next/link";
 import { motion } from "framer-motion";
-import { Calendar, Users, Trophy, Zap, Flame, Star } from "lucide-react";
+import { Calendar, Users, Trophy, Zap, Flame, Star, Megaphone, BarChart3, CalendarDays, Shield } from "lucide-react";
 import StatsCard from "@/components/StatsCard";
 import EventCard from "@/components/EventCard";
 import ClubCard from "@/components/ClubCard";
@@ -66,6 +67,27 @@ export default function DashboardPage() {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
           {stats.map((stat, i) => (
             <StatsCard key={stat.label} {...stat} index={i} />
+          ))}
+        </div>
+
+        {/* Quick Links */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
+          {[
+            { href: "/announcements", icon: Megaphone, label: "Announcements", color: "#f59e0b" },
+            { href: "/calendar", icon: CalendarDays, label: "Calendar", color: "#06b6d4" },
+            { href: "/leaderboard", icon: BarChart3, label: "Leaderboard", color: "#22c55e" },
+            { href: "/admin", icon: Shield, label: "Admin Panel", color: "#ef4444" },
+          ].map((link, i) => (
+            <motion.div key={link.href} initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 + i * 0.08 }}>
+              <Link href={link.href} className="glass-card p-4 flex items-center gap-3 cursor-pointer group block">
+                <div className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: `${link.color}20` }}>
+                  <link.icon size={18} style={{ color: link.color }} />
+                </div>
+                <span className="text-sm font-medium group-hover:opacity-80 transition-opacity" style={{ color: "var(--text-primary)" }}>
+                  {link.label}
+                </span>
+              </Link>
+            </motion.div>
           ))}
         </div>
 
